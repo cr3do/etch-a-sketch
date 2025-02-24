@@ -3,7 +3,11 @@
 }
 
 .cell {
-    border: .3px solid rgb(214, 214, 214);
+    border: .3px solid rgb(233, 229, 229);
     width: 40px;
     height: 40px;
+}
+
+.cell:hover {
+    background-color: rgb(224, 221, 217);
 }
