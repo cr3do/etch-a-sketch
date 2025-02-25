@@ -1,29 +1,20 @@
 const container = document.getElementById("grid-container");
 
-// generate grid with 16x16 cells
-// create 16 row using for loop
-for(i = 0; i < 16; i++) {
-    const row = document.createElement("div");
-    row.setAttribute("class", "row");
+// get user grid size
+function getGridSize() {
+    let txtGridSize = document.getElementById("txtGridSize");
+    gridSize = txtGridSize.value;
 
-    // populate row with 16 cells using for loop
-    for(c = 0; c < 16; c++) {
-        const cell = document.createElement("div");
-        cell.setAttribute("class", "cell");
-        row.appendChild(cell);
-    }
-    container.appendChild(row);
-
-    drawGrid();
+    generateGrid();
 }
 
-
 const btnSetGridSize = document.getElementById("btnSetGridSize");
-btnSetGridSize.addEventListener("click", generateGrid);
+btnSetGridSize.addEventListener("click", getGridSize);
 
+// set default grid size
+let gridSize = 16;
+// generate grid
 function generateGrid() {
-    let txtGridSize = document.getElementById("txtGridSize");
-    let gridSize = txtGridSize.value;
 
     if ((gridSize > 100) || (gridSize < 1)) {
         alert("Please enter grid size between 1 to 100.");
@@ -47,10 +38,13 @@ function generateGrid() {
 
     drawGrid();
 }
+generateGrid();
 
+// color the grid on hover
 function drawGrid() {
+    // select all cell
     const cells = document.querySelectorAll(".cell");
-
+    // loop to add each cell with hover event listener 
     cells.forEach(cell => {
         cell.addEventListener("mouseover", function() {
             cell.setAttribute('style', 'background-color: red;');
