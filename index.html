@@ -7,30 +7,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Etch-a-Sketch</h1>
-    </header>
-
-    <main>
-        <div id="grid-container">
-
-        </div>
-
-        <div id="divGridSize">
-            <h2>Set Grid Size:</h2>
+    <container>
+        <header>
+            <h1>Etch-a-Sketch</h1>
+        </header>
+    
+        <main>
+            <div id="grid-container">
+    
+            </div>
+    
+            <div id="divGridSize">
+                <h2>Set Grid Size:</h2>
+                <p>
+                    <label for="txtGridSize">Input grid size:</label>
+                    <input type="number" max="100" maxlength="3" id="txtGridSize" placeholder="Enter grid size" required>
+                </p>            
+                <p>
+                    <button id="btnSetGridSize">Set</button>
+                </p>            
+            </div>
+        </main>
+    
+        <footer>
             <p>
-                <label for="txtGridSize">Input grid size:</label>
-                <input type="number" max="100" maxlength="3" id="txtGridSize" placeholder="Enter grid size" required>
-            </p>            
-            <p>
-                <button id="btnSetGridSize">Set</button>
-            </p>            
-        </div>
-    </main>
-
-    <footer>
-
-    </footer>
+                Created by: &#128049;Sagit&#128049; 
+            </p>
+        </footer>
+    </container>
 
     <script src="js/script.js"></script>
 </body>

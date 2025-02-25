@@ -42,6 +42,4 @@ function generateGrid() {
             container.appendChild(row);
         }
     }
-
-    
 }
