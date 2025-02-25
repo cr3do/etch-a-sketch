@@ -13,6 +13,8 @@ for(i = 0; i < 16; i++) {
         row.appendChild(cell);
     }
     container.appendChild(row);
+
+    drawGrid();
 }
 
 
@@ -42,4 +44,18 @@ function generateGrid() {
             container.appendChild(row);
         }
     }
+
+    drawGrid();
 }
+
+function drawGrid() {
+    const cells = document.querySelectorAll(".cell");
+
+    cells.forEach(cell => {
+        cell.addEventListener("mouseover", function() {
+            cell.setAttribute('style', 'background-color: red;');
+        });
+    });
+}
+
+
