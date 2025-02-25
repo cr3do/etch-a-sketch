@@ -26,3 +26,7 @@ main {
 .cell:hover {
     background-color: rgb(30, 27, 184);
 }
+
+#divGridSize {
+    padding: 0 20px;
+}
