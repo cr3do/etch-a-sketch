@@ -48,6 +48,7 @@ function drawGrid() {
     // loop to add each cell with hover event listener 
     cells.forEach(cell => {
         cell.addEventListener("mouseover", function() {
+            // get current color on color picker
             let color = document.getElementById("inputColorPicker").value;
             cell.setAttribute('style', `background-color: ${color};`);
         });
