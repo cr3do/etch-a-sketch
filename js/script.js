@@ -42,12 +42,14 @@ generateGrid();
 
 // color the grid on hover
 function drawGrid() {
+
     // select all cell
     const cells = document.querySelectorAll(".cell");
     // loop to add each cell with hover event listener 
     cells.forEach(cell => {
         cell.addEventListener("mouseover", function() {
-            cell.setAttribute('style', 'background-color: red;');
+            let color = document.getElementById("inputColorPicker").value;
+            cell.setAttribute('style', `background-color: ${color};`);
         });
     });
 }
