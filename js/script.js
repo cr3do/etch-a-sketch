@@ -2,6 +2,8 @@ const container = document.getElementById("grid-container");
 let txtGridSize = document.getElementById("txtGridSize");
 let gridValue = document.getElementById("gridValue");
 
+txtGridSize.addEventListener("input", setGridSize);
+
 // set default grid size
 let gridSize = 16;
 gridValue.textContent = gridSize;
@@ -12,8 +14,6 @@ function setGridSize() {
     gridValue.textContent = txtGridSize.value
     generateGrid();
 }
-
-txtGridSize.addEventListener("input", setGridSize);
 
 // generate grid
 function generateGrid() {
@@ -42,8 +42,8 @@ function generateGrid() {
 }
 generateGrid();
 
-let colorMode;
 
+let colorMode;
 // color the grid on hover
 function drawGrid() {
     // select all cell
@@ -77,7 +77,9 @@ btnColorRandom.addEventListener("click", getColorMode);
 
 function getColorMode() {    
     if(this.id === "btnColorNormal") {
+        // set default mode
         colorMode = 'color';
+        // highlight selected button and remove the other
         btnColorRandom.removeAttribute('class', 'active');
         btnColorNormal.setAttribute('class', 'active');
     } else if (this.id === "btnColorRandom") {
