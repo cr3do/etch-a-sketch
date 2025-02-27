@@ -54,15 +54,15 @@ function drawGrid() {
             // get current color on color picker
             getColorMode;
 
+            let color;
+
             if(colorMode === "color") {
                 color = document.getElementById("inputColorPicker").value;
-                console.log("normal");
             } else if (colorMode === "randomize") {
                 let randomRed = Math.floor(Math.random() * 254);
                 let randomGreen = Math.floor(Math.random() * 254);
                 let randomBlue = Math.floor(Math.random() * 254);
                 color = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-                console.log("random");
             }
 
             cell.setAttribute('style', `background-color: ${color};`);
