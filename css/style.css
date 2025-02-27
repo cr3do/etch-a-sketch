@@ -28,13 +28,12 @@ footer {
     text-align: center;
     background-color: aqua;
     padding: 14px;
-    
 }
 
 #canvas-container {
     padding: 30px;
     box-shadow: .5px 3px 2px 3px rgb(240, 239, 239);
-    border-radius: 10px;
+    border-radius: 25px;
 
 }
 
