@@ -19,7 +19,7 @@ main {
     flex: auto;
     justify-content: center;
     padding: 10px;
-    gap: 25px;
+    gap: 30px;
 }
 
 footer {
@@ -72,6 +72,8 @@ footer {
 
 #inputColorPicker:hover, #txtGridSize:hover {
     cursor: pointer;
+    transition: all .3s ease;
+    transform: translateY(-1px);
 }
 
 #divGridSize button {
