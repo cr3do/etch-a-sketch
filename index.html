@@ -13,23 +13,30 @@
         </header>
     
         <main>
-            <div id="grid-container">
+            <div id="">                
+                <div id="grid-container">
     
+                </div>
             </div>
     
             <div id="divGridSize">
                 <h2>Set Grid Size:</h2>
                 <p>
-                    <label for="txtGridSize">Input grid size:</label>
-                    <input type="number" max="100" maxlength="3" id="txtGridSize" placeholder="Enter grid size" required>
-                </p>       
+                    <label for="txtGridSize">Size:</label>
+                    <span id="gridValue"></span>
+                    <input type="range" min="1" max="100" value="16" id="txtGridSize" placeholder="Enter grid size" required>
+                </p>   
+                <h2>Color Mode:</h2>            
                 <p>
-                    <button id="btnSetGridSize">Set</button>
-                </p>      
-                <p>
-                    <label for="">Color</label>
+                    <label for="color">Color</label>
                     <input type="color" id="inputColorPicker">
-                </p>           
+                </p>  
+                <p class="buttonContainer">
+                    <input type="button" id="btnColorNormal" value="Normal" />
+                </p>
+                <p class="buttonContainer">                    
+                    <input type="button" id="btnColorRandom" value="Random Color" />
+                </p>
             </div>
         </main>
     

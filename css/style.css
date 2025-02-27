@@ -7,6 +7,7 @@ body {
 container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 header {
@@ -18,6 +19,7 @@ main {
     flex: auto;
     justify-content: center;
     padding: 10px;
+    gap: 25px;
 }
 
 footer {
@@ -44,6 +46,7 @@ footer {
     min-height: 5px;
     aspect-ratio: 1/1;
     flex-grow: 1;
+    box-sizing: border-box;
 }
 
 .cell:hover {
@@ -53,6 +56,22 @@ footer {
 #divGridSize {
     padding: 0 20px;
     font-size: 16px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: .5px 3px 2px 3px rgb(240, 239, 239);
+}
+
+#divGridSize input {
+    width: 100%;
+}
+
+#inputColorPicker {
+    border: none;
+    height: 40px;
+}
+
+#inputColorPicker:hover, #txtGridSize:hover {
+    cursor: pointer;
 }
 
 #divGridSize button {
@@ -60,6 +79,22 @@ footer {
     font-size: 16px;
 }
 
-button:hover {
+.buttonContainer > [type=button]:hover {
     cursor: pointer;
+    border: 1px solid rgb(107, 107, 255);
+    transition: all .3s ease;
+    transform: translateY(-3px);
+}
+
+.buttonContainer > input[type=button] {
+    padding: 15px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.active {
+    background-color: red; 
+    color: white;
 }

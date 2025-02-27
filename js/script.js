@@ -1,18 +1,20 @@
 const container = document.getElementById("grid-container");
-
-// get user grid size
-function getGridSize() {
-    let txtGridSize = document.getElementById("txtGridSize");
-    gridSize = txtGridSize.value;
-
-    generateGrid();
-}
-
-const btnSetGridSize = document.getElementById("btnSetGridSize");
-btnSetGridSize.addEventListener("click", getGridSize);
+let txtGridSize = document.getElementById("txtGridSize");
+let gridValue = document.getElementById("gridValue");
 
 // set default grid size
 let gridSize = 16;
+gridValue.textContent = gridSize;
+
+// get user grid size
+function setGridSize() {
+    gridSize = txtGridSize.value;
+    gridValue.textContent = txtGridSize.value
+    generateGrid();
+}
+
+txtGridSize.addEventListener("input", setGridSize);
+
 // generate grid
 function generateGrid() {
 
@@ -27,7 +29,7 @@ function generateGrid() {
             const row = document.createElement("div");
             row.setAttribute("class", "row");
     
-        for(c = 0; c < gridSize; c++) {
+            for(c = 0; c < gridSize; c++) {
                 const cell = document.createElement("div");
                 cell.setAttribute("class", "cell");
                 row.appendChild(cell);
@@ -40,19 +42,49 @@ function generateGrid() {
 }
 generateGrid();
 
+let colorMode;
+
 // color the grid on hover
 function drawGrid() {
-
     // select all cell
     const cells = document.querySelectorAll(".cell");
     // loop to add each cell with hover event listener 
     cells.forEach(cell => {
         cell.addEventListener("mouseover", function() {
             // get current color on color picker
-            let color = document.getElementById("inputColorPicker").value;
+            getColorMode;
+
+            if(colorMode === "color") {
+                color = document.getElementById("inputColorPicker").value;
+                console.log("normal");
+            } else if (colorMode === "randomize") {
+                let randomRed = Math.floor(Math.random() * 254);
+                let randomGreen = Math.floor(Math.random() * 254);
+                let randomBlue = Math.floor(Math.random() * 254);
+                color = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+                console.log("random");
+            }
+
             cell.setAttribute('style', `background-color: ${color};`);
         });
     });
+}
+
+let btnColorNormal = document.getElementById("btnColorNormal");
+let btnColorRandom = document.getElementById("btnColorRandom");
+btnColorNormal.addEventListener("click", getColorMode);
+btnColorRandom.addEventListener("click", getColorMode);
+
+function getColorMode() {    
+    if(this.id === "btnColorNormal") {
+        colorMode = 'color';
+        btnColorRandom.removeAttribute('class', 'active');
+        btnColorNormal.setAttribute('class', 'active');
+    } else if (this.id === "btnColorRandom") {
+        colorMode = 'randomize';
+        btnColorNormal.removeAttribute('class', 'active');
+        btnColorRandom.setAttribute('class', 'active');
+    }
 }
 
 
