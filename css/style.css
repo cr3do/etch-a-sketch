@@ -8,6 +8,7 @@ container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 header {
@@ -30,6 +31,13 @@ footer {
     
 }
 
+#canvas-container {
+    padding: 30px;
+    box-shadow: .5px 3px 2px 3px rgb(240, 239, 239);
+    border-radius: 10px;
+
+}
+
 #grid-container {
     width: 900px;
     align-items: stretch;
@@ -47,6 +55,7 @@ footer {
     aspect-ratio: 1/1;
     flex-grow: 1;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .cell:hover {
@@ -72,7 +81,7 @@ footer {
 
 #inputColorPicker:hover, #txtGridSize:hover {
     cursor: pointer;
-    transition: all .3s ease;
+    transition: all .2s ease;
     transform: translateY(-1px);
 }
 
